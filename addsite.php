@@ -423,7 +423,7 @@ Contractology supply a wide variety of commercial legal documents, such as <a hr
 				acceptedFiles: "image/*", // Accept images only
 				addRemoveLinks : true,
 				maxFilesize: 0.5,
-				//dictDefaultMessage: '<span class="text-center"><span class="font-lg visible-xs-block visible-sm-block visible-lg-block"><span class="font-lg"><i class="fa fa-caret-right text-danger"></i> Arrastre las imagenes <span class="font-xs">a subir</span></span><span>&nbsp&nbsp<h4 class="display-inline"> (O Click)</h4></span>',
+				dictDefaultMessage: '<span class="dz-message"><span class="font-lg visible-xs-block visible-sm-block visible-lg-block"><span class="font-lg"><i class="fa fa-caret-right text-danger"></i> Arrastre las imagenes <span class="font-xs">a subir</span></span><span>&nbsp&nbsp<h4 class="display-inline"> (O Click)</h4></span>',
 				dictResponseError: 'Error subiendo la imagen!'
 			});
 

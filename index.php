@@ -90,17 +90,17 @@ include("inc/nav.php");
 		</section>
 		<!-- end widget grid -->
 
-		<div class="col-md-1">
+		<div class="col-md-1 hidden-xs">
 			<button id="grid"class="btn btn-default" type="button" id="tree">
 				<i class="glyphicon glyphicon-th"></i>
 			</button>		
 		</div>
-		<div id="list" class="col-md-1">
-			<button class="btn btn-default" type="button">
+		<div class="col-md-1 hidden-xs">
+			<button class="btn btn-default" type="button" id="list">
 				<i class="glyphicon glyphicon-list"></i>
 			</button>		
 		</div>
-		<div class="col-md-1 col-md-offset-9">
+		<div class="col-md-1 col-md-offset-9 ">
 			<button class="btn btn-default" type="button" data-original-title="Añadir nuevo sitio" onclick="location.href='addsite.php'">
 				<i class="glyphicon glyphicon-plus" ></i>
 			</button>		
