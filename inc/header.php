@@ -23,7 +23,9 @@
 
 		<!-- SmartAdmin RTL Support is under construction-->
 		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo ASSETS_URL; ?>/css/smartadmin-rtl.min.css">
-
+		
+		<!--Estilos del dialog -->
+		<link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/css/magnific-popup.css">
 		<!-- We recommend you use "your_style.css" to override SmartAdmin
 		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
 		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo ASSETS_URL; ?>/css/your_style.css"> -->

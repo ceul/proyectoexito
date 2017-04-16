@@ -201,7 +201,7 @@ include("inc/nav.php");
 								<div class="row">
 									<div class="col-sm-1 col-md-2 col-lg-5">
 										
-											<button class="btn btn btn-warning btn-lg " id="enable">Modificar</button>
+											<button class="btn btn btn-warning btn-lg popup-with-form" href="#test-form" >Modificar</button>
 										
 									</div>
 									<div class="col-sm-1 col-md-2 col-lg-5">
@@ -232,6 +232,22 @@ include("inc/nav.php");
 
 </div>
 <!-- END MAIN PANEL -->
+<div id="dialog_simple" title="Dialog Simple Title">
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	</p>
+</div>
+<form id="test-form" class="white-popup-block mfp-hide">
+	<fieldset>
+		<legend>Default Form Elements</legend>
+		<div class="form-group">
+			<label class="col-md-2 control-label">Textarea</label>
+			<div class="col-md-10">
+				<textarea class="form-control" placeholder="Textarea" rows="4"></textarea>
+			</div>
+		</div>
+	</fieldset>
+</form>
 <!-- ==========================CONTENT ENDS HERE ========================== -->
 
 <!-- PAGE FOOTER -->
@@ -262,6 +278,8 @@ include("inc/nav.php");
 <script src="<?php echo ASSETS_URL; ?>/js/plugin/x-editable/x-editable.min.js"></script>
 <script src="<?php echo ASSETS_URL; ?>/js/plugin/typeahead/typeahead.min.js"></script>
 <script src="<?php echo ASSETS_URL; ?>/js/plugin/typeahead/typeaheadjs.min.js"></script>
+<script src="<?php echo ASSETS_URL; ?>/js/plugin/jquery.magnific-popup.js"></script>
+
 <script type="text/javascript">
 
 
@@ -327,56 +345,63 @@ include("inc/nav.php");
 			$('#user .editable').editable('toggleDisabled');
 		    });*/
 		
-		
-		// modal dialog init: custom buttons and a "close" callback reseting the form inside
-			var dialog = $("#addtab").dialog({
+		$.widget("ui.dialog", $.extend({}, $.ui.dialog.prototype, {
+				_title : function(title) {
+					if (!this.options.title) {
+						title.html("&#160;");
+					} else {
+						title.html(this.options.title);
+					}
+				}
+			}));
+
+		$('.popup-with-form').magnificPopup({
+			type: 'inline',
+			preloader: false,
+			focus: '#name',
+
+			// When elemened is focused, some mobile browsers in some cases zoom in
+			// It looks not nice, so we disable it:
+			callbacks: {
+				beforeOpen: function() {
+					if($(window).width() < 700) {
+						this.st.focus = false;
+					} else {
+						this.st.focus = '#name';
+					}
+				}
+			}
+		});
+
+		$("#enable").click( function(){
+			//alert("entro");
+			$("#dialog_simple").dialog("open");
+			return false;
+		});
+
+
+		$('#dialog_simple').dialog({
 				autoOpen : false,
 				width : 600,
 				resizable : false,
 				modal : true,
+				title : "<div class='widget-header'><h4><i class='fa fa-warning'></i> Empty the recycle bin?</h4></div>",
 				buttons : [{
+					html : "<i class='fa fa-trash-o'></i>&nbsp; Delete all items",
+					"class" : "btn btn-danger",
+					click : function() {
+						$(this).dialog("close");
+					}
+				}, {
 					html : "<i class='fa fa-times'></i>&nbsp; Cancel",
 					"class" : "btn btn-default",
 					click : function() {
 						$(this).dialog("close");
-		
-					}
-				}, {
-		
-					html : "<i class='fa fa-plus'></i>&nbsp; Add",
-					"class" : "btn btn-danger",
-					click : function() {
-						addTab();
-						$(this).dialog("close");
 					}
 				}]
 			});
-		
-			// addTab form: calls addTab function on submit and closes the dialog
-			var form = dialog.find("form").submit(function(event) {
-				addTab();
-				dialog.dialog("close");
-				event.preventDefault();
-			});
-		
-			// actual addTab function: adds new tab using the input from the form above
-			function addTab() {
-				var label = tabTitle.val() || "Tab " + tabCounter, id = "tabs-" + tabCounter, li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label)), tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
-		
-				tabs.find(".ui-tabs-nav").append(li);
-				tabs.append("<div id='" + id + "'><p>" + tabContentHtml + "</p></div>");
-				tabs.tabs("refresh");
-				tabCounter++;
-		
-				// clear fields
-				$("#tab_title").val("");
-				$("#tab_content").val("");
-			}
-		
 			// addTab button: just opens the dialog
-			$("#enable").button().click(function() {
-				dialog.dialog("open");
-			});
+		
 
 		/*$('#descripcion').editable("click",function(dialog){
 			dialog.dialog("open");
