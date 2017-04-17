@@ -303,7 +303,7 @@ include("inc/nav.php");
 					<!-- end product -->
 				<div class="row">
 				</div>
-		<div style="padding:3px;">.</div>
+		<br>
 		
 
 	</div>

@@ -78,6 +78,10 @@ include("inc/nav.php");
 										<a class="right carousel-control" href="#myCarousel-2" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a>
 										</div>
 									</div>
+									<div>
+										<button hidden="hidden" id="btn-img" class="btn btn btn-warning btn-lg popup-with-form" href="#img_form">Imagenes</button>
+									</div>
+									<br>
 								</div>
 								<div class="col-md-7 col-sm-12 col-xs-12">
 							
@@ -116,17 +120,17 @@ include("inc/nav.php");
 									<div id="myTabContent" class="tab-content">
 										<div class="tab-pane fade active in" id="more-information">
 											<br>
-<a href="form-x-editable.html#" id="descripcion" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-original-title="Descripcion">Ventana ubicada en el centro de santa rosa de cabal, con alta concurrencia de personas en el dia y en la noche debido a estar dentro de la zona comercial del municipio. </a>
+<a id="descripcion" href="#desc_form" class="popup-with-form">Ventana ubicada en el centro de santa rosa de cabal, con alta concurrencia de personas en el dia y en la noche debido a estar dentro de la zona comercial del municipio. </a>
 										</div>
 										<div class="tab-pane fade" id="specifications">
 											<br>
 											<dl class="">
 													<dt>Largo</dt>
-			                                        <dd href="form-x-editable.html#" id="largo" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-original-title="Largo">1.2 mts</dd>
+			                                        <dd class="popup-with-form" id="largo" href="#espec_form">1.2 mts</dd>
 			                                        <br>
 
 			                                        <dt>Ancho</dt>
-			                                        <dd href="form-x-editable.html#" id="ancho" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-original-title="Ancho">2 mts</dd>
+			                                        <dd class="popup-with-form" href="#espec_form" id="ancho">2 mts</dd>
 			                                        
 			                                    </dl>
 										</div>
@@ -201,7 +205,7 @@ include("inc/nav.php");
 								<div class="row">
 									<div class="col-sm-1 col-md-2 col-lg-5">
 										
-											<button class="btn btn btn-warning btn-lg popup-with-form" href="#test-form" >Modificar</button>
+											<button id="btn" class="btn btn btn-warning btn-lg" >Modificar</button>
 										
 									</div>
 									<div class="col-sm-1 col-md-2 col-lg-5">
@@ -249,7 +253,7 @@ include("inc/nav.php");
 	</footer>
 </form>
 
-<form id="test-form" class="white-popup-block mfp-hide smart-form">
+<form id="img_form" class="white-popup-block mfp-hide smart-form">
 	<header>Imagenes</header>
 	<fieldset>
 		<form action="upload.php" class="dropzone" id="mydropzone"></form>
@@ -264,6 +268,46 @@ include("inc/nav.php");
 	</fieldset>
 	
 
+</form>
+
+<form id="espec_form" class="white-popup-block mfp-hide smart-form"> 
+	<header>Especificaciones</header>	
+	<fieldset>
+		<label class="label col col-2">Largo</label>
+		<section class="col col-3">
+			<label class="input">
+				<input type="number" step="0.01" name="largo" placeholder="Largo">
+			</label>
+		</section>
+		<section class="col col-3">
+			<label class="select">
+			<select name="unidad">
+				<option value="0" selected="">mts</option>
+				<option value="11">centimetros</option>
+				<option value="12">pulgadas</option>
+			</select> <i></i> </label>
+		</section>
+	</fieldset>
+	<fieldset>
+		<label class="label col col-2">Ancho</label>
+		<section class="col col-3">
+			<label class="input">
+				<input type="number" step="0.01" name="ancho" placeholder="Ancho">
+			</label>
+		</section>
+		<section class="col col-3">
+			<label class="select">
+			<select name="unidad">
+				<option value="0" selected="">mts</option>
+				<option value="11">centimetros</option>
+				<option value="12">pulgadas</option>
+			</select> <i></i> </label>
+		</section>
+	</fieldset>
+	<footer>
+		<button type="submit" class="btn btn-primary">Aceptar</button>
+		<button type="button" class="btn btn-default" onclick="window.history.back();">Cancelar</button>
+	</footer>
 </form>
 
 <form id="ubi_form" class="white-popup-block mfp-hide smart-form">
@@ -1328,9 +1372,27 @@ include("inc/nav.php");
 			    }
 			}
 		    });	
-
-		 	
 		
+		$('#descripcion').click(function(){
+		    //alert("oee");
+		    //event.stopPropagation();
+		    //$(this).removeClass("popup-with-form");
+		    return false;
+		    //alert("oee");
+		});
+		
+		/*$('#largo').click(function(event){
+		    //alert("oee");
+		    event.stopImmediatePropagation();
+		    $(this).removeClass("popup-with-form");
+		    
+		    //alert("oee");
+		});*/
+		 	
+		$("#btn").click(function(){
+			
+		
+		});
 		 
 		$("#smart-mod-eg1").click(function(e) {
 			$.SmartMessageBox({
