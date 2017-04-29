@@ -79,7 +79,7 @@ include("inc/nav.php");
 										</div>
 									</div>
 									<div>
-										<button hidden="hidden" id="btn-img" class="btn btn btn-warning btn-lg popup-with-form" href="#img_form">Imagenes</button>
+										<button id="btn-img" class="btn btn btn-warning btn-lg popup-with-form hidden" href="#img_form">Imagenes</button>
 									</div>
 									<br>
 								</div>
@@ -91,23 +91,33 @@ include("inc/nav.php");
 		 
 								</h2>
 								<hr>
-								<h5>
-									Dirección:  Carrera 14 # 14-62
-								</h5>
-								<h5>
-									Costo: 50000 COP
-								</h5>
-								<h5>
-									Fecha de inicio: 20 de Agosto del 2016	
-								</h5>
-								<h5>
-									Fecha de fin: 19 de Agosto del 2017	
-								</h5>
-								<h5>
-									Arrendado a: Empresa publicitaria Pare
-								</h5>
-														
+								<div class="row">
+									<div>
+										<h5>
+											Dirección:  <span id='direccion'>Carrera 14 # 14-62</span>
+										</h5>
+										<h5>
+											Costo: 50000 COP
+										</h5>
+										<h5>
+											Fecha de inicio: 20 de Agosto del 2016	
+										</h5>
+										<h5>
+											Fecha de fin: 19 de Agosto del 2017	
+										</h5>
+										<h5>
+											Arrendado a: Empresa publicitaria Pare
+										</h5>
+										<h5>
+											Ubicación : Santa Rosa de Cabal
+										</h5>
+									</div>	
+									<!--<div id="map_canvas" class="google_maps col-xs-6 col-sm-5 col-md-5 col-lg-5" gmap-data-lat="29.895883" data-gmap-lng="-75.69966990350343" data-gmap-zoom="5">
+										&nbsp;
+									</div>-->
+								</div>					
 								
+	
 								<hr>
 								<div class="description description-tabs">
 
@@ -119,14 +129,16 @@ include("inc/nav.php");
 									</ul>
 									<div id="myTabContent" class="tab-content">
 										<div class="tab-pane fade active in" id="more-information">
-											<br>
-<a id="descripcion" href="#desc_form" class="popup-with-form">Ventana ubicada en el centro de santa rosa de cabal, con alta concurrencia de personas en el dia y en la noche debido a estar dentro de la zona comercial del municipio. </a>
-										</div>
+													<br>
+													<p id="descripcion" href="#desc_form" class="popup-with-form">Ventana ubicada en el centro del municipio de santa rosa de cabal con alta con currencia de personas gracias estar en la zona comercial de este municipio. </p>
+												</div>
+									
+
 										<div class="tab-pane fade" id="specifications">
 											<br>
 											<dl class="">
 													<dt>Largo</dt>
-			                                        <dd class="popup-with-form" id="largo" href="#espec_form">1.2 mts</dd>
+			                                        <dd id="largo" class="popup-with-form" href="#espec_form">1.2 mts</dd>
 			                                        <br>
 
 			                                        <dt>Ancho</dt>
@@ -202,18 +214,42 @@ include("inc/nav.php");
 
 								</div>
 								<hr>
-								<div class="row">
-									<div class="col-sm-1 col-md-2 col-lg-5">
+								<div id='btns-mod' class="row">
+									<div class="col-xs-6 col-sm-5 col-md-5 col-lg-5">
 										
-											<button id="btn" class="btn btn btn-warning btn-lg" >Modificar</button>
+											<button id="btn-modificar" class="btn btn btn-warning btn-lg" >Modificar</button>
 										
 									</div>
-									<div class="col-sm-1 col-md-2 col-lg-5">
+									<div class="col-xs-6 col-sm-5 col-md-5 col-lg-5">
 										
-											<a href="#" id="smart-mod-eg1" class="btn btn-danger btn-lg">Eliminar</a>
+											<a href="#" id="smart-mod-eg1" class="btn btn-danger btn-lg ">Eliminar</a>
 										
 									</div>
 									
+								</div>
+								<div id='btns-acep' class="row hidden">
+									<div class="col-xs-6 col-sm-5 col-md-5 col-lg-5">
+
+										
+
+											<button id="btn-acep-change" class="btn btn btn-success btn-lg" >Aceptar</button>
+
+										
+
+									</div>
+
+									<div class="col-xs-6 col-sm-5 col-md-5 col-lg-5">
+
+										
+
+											<a id="btn-cancel-change" class="btn btn-danger btn-lg ">Cancelar</a>
+
+										
+
+									</div>
+
+									
+
 								</div>
 								
 							</div>
@@ -242,14 +278,14 @@ include("inc/nav.php");
 	<fieldset>
 		<div class="form-group">
 			<div class="col-md-10">
-				<textarea class="form-control" placeholder="Descripción" rows="4"></textarea>
+				<textarea id="desc_text" class="form-control" placeholder="Descripción" rows="4"></textarea>
 			</div>
 		</div>
 		
 	</fieldset>
 	<footer>
-		<button type="submit" class="btn btn-primary">Aceptar</button>
-		<button type="button" class="btn btn-default" onclick="window.history.back();">Atras</button>
+		<button id="acep_desc" type="button" class="btn btn-primary">Aceptar</button>
+		<button id="cancel_desc"type="button" class="btn btn-default">Cancelar</button>
 	</footer>
 </form>
 
@@ -262,8 +298,8 @@ include("inc/nav.php");
 		</div>
 		<!--Existe un conflicto con el form por eso el footer debe estar dentro del field-->
 		<footer>
-			<button type="submit" class="btn btn-primary">Aceptar</button>
-			<button type="button" class="btn btn-default" onclick="window.history.back();">Cancelar</button>
+			<button id="acep_img"type="button" class="btn btn-primary">Aceptar</button>
+			<button id="cancel_img" type="button" class="btn btn-default">Cancelar</button>
 		</footer>
 	</fieldset>
 	
@@ -276,12 +312,12 @@ include("inc/nav.php");
 		<label class="label col col-2">Largo</label>
 		<section class="col col-3">
 			<label class="input">
-				<input type="number" step="0.01" name="largo" placeholder="Largo">
+				<input id="espc_largo" type="number" step="0.01" name="largo" placeholder="Largo">
 			</label>
 		</section>
 		<section class="col col-3">
 			<label class="select">
-			<select name="unidad">
+			<select id="espec_uni_largo" name="unidad">
 				<option value="0" selected="">mts</option>
 				<option value="11">centimetros</option>
 				<option value="12">pulgadas</option>
@@ -292,12 +328,12 @@ include("inc/nav.php");
 		<label class="label col col-2">Ancho</label>
 		<section class="col col-3">
 			<label class="input">
-				<input type="number" step="0.01" name="ancho" placeholder="Ancho">
+				<input id="espc_ancho" type="number" step="0.01" name="ancho" placeholder="Ancho">
 			</label>
 		</section>
 		<section class="col col-3">
 			<label class="select">
-			<select name="unidad">
+			<select id="espec_uni_ancho" name="unidad">
 				<option value="0" selected="">mts</option>
 				<option value="11">centimetros</option>
 				<option value="12">pulgadas</option>
@@ -305,8 +341,8 @@ include("inc/nav.php");
 		</section>
 	</fieldset>
 	<footer>
-		<button type="submit" class="btn btn-primary">Aceptar</button>
-		<button type="button" class="btn btn-default" onclick="window.history.back();">Cancelar</button>
+		<button id="acep_espec" type="button" class="btn btn-primary">Aceptar</button>
+		<button id="cancel_espec" type="button" class="btn btn-default">Cancelar</button>
 	</footer>
 </form>
 
@@ -339,8 +375,8 @@ include("inc/nav.php");
 		</section>
 	</fieldset>
 	<footer>
-		<button type="submit" class="btn btn-primary">Aceptar</button>
-		<button type="button" class="btn btn-default" onclick="window.history.back();">Atras</button>
+		<button id="acep_ubi" type="button" class="btn btn-primary">Aceptar</button>
+		<button id="cancel_ubi" type="button" class="btn btn-default">Cancelar</button>
 	</footer>
 
 </form>
@@ -388,9 +424,17 @@ include("inc/nav.php");
 				dictResponseError: 'Error subiendo la imagen!'
 			});
 	$(document).ready(function() {
-
+		var estado=0;
 		var pagefunction = function() {
-
+		function desactivar(){
+			$('#descripcion').off('click');
+			$('#largo').off('click');
+			$('#ancho').off('click');
+			$('#btn-img').hide();
+			$('#btns-acep').hide();
+			//$('').off('click');
+		}
+		desactivar();
 		    /*jslint smarttabs:true */
 			var colorful_style = [{
 		
@@ -1353,7 +1397,138 @@ include("inc/nav.php");
 				}
 			}
 		});
+		//------------------------------------------------- descripcion ------------------//
+		$("#acep_desc").click(function(){
+			var desc = $("#desc_text").val();
+			$.magnificPopup.close();
+			$("#descripcion").text(desc);
+			
+		});
+		
+		$("#cancel_desc").click(function(event){
+			$.magnificPopup.close();
+		});
 
+
+		//-------------------------------------especificaciones --------------------------------//
+
+		$('#acep_espec').click(function(){
+			$.magnificPopup.close();
+			$("#largo").text(($("#espc_largo").val())+(" ")+($("#espec_uni_largo option:selected").text()));
+			$("#ancho").text(($("#espc_ancho").val())+(" ")+($("#espec_uni_ancho option:selected").text()));
+		});
+		
+		$("#cancel_espec").click(function(){
+			$.magnificPopup.close();
+		});	
+
+		//-------------------------------------------------ubicacion--------------------------------//
+
+		$('#acep_ubi').click(function(){
+			$.magnificPopup.close();
+		});
+		
+		$("#cancel_ubi").click(function(){
+			$.magnificPopup.close();
+		});
+
+		//--------------------------------------------- imagenes --------------------------------------//
+
+		$('#acep_img').click(function(){
+			$.magnificPopup.close();
+		});
+		
+		$("#cancel_img").click(function(){
+			$.magnificPopup.close();
+		});
+
+
+
+		$("#btn-modificar").click(function(){
+				$('#btns-mod').hide();
+				$('#btns-acep').show();
+				$('#btn-img').show();
+				$('#btns-acep').removeClass('hidden');
+				$('#btn-img').removeClass('hidden');
+				$('#descripcion').on('click',function(){
+					var desc=$(this).text();
+		  			$("#desc_text").val(desc);
+					$.magnificPopup.open({
+					  items: {
+					    src: '#desc_form'
+					  },
+					  type: 'inline'
+					});
+				});
+				$('#descripcion').css('text-decoration','underline');
+				$('#descripcion').css('color','blue');
+				$('#largo').on('click',function(){
+					$("#espc_largo").val(parseFloat($(this).text()));
+		  			$("#espc_ancho").val(parseFloat($('#ancho').text()));
+					$.magnificPopup.open({
+					  items: {
+					    src: '#espec_form'
+					  },
+					  type: 'inline'
+					});
+				});
+				$('#largo').css('text-decoration','underline');
+				$('#largo').css('color','blue');
+				$('#ancho').on('click',function(){
+					$("#espc_largo").val(parseFloat($('#largo').text()));
+		   			$("#espc_ancho").val(parseFloat($(this).text()));
+					$.magnificPopup.open({
+					  items: {
+					    src: '#espec_form'
+					  },
+					  type: 'inline'
+					});
+				});
+				$('#ancho').css('text-decoration','underline');
+				$('#ancho').css('color','blue');
+				$('#direccion').css('text-decoration','underline');
+				$('#direccion').css('color','blue');
+				estado=1;		
+			
+		});
+
+		$('#btn-acep-change').click(function(){
+			$('#btns-mod').show()
+			$('#btn-img').addClass('hidden');
+			$('#btns-acep').addClass('hidden');
+			$('#descripcion').off('click');
+			$('#descripcion').css('text-decoration','none');
+			$('#descripcion').css('color','black');
+			$('#largo').off('click');
+			$('#largo').css('text-decoration','none');
+			$('#largo').css('color','black');
+			$('#ancho').off('click');
+			$('#ancho').css('text-decoration','none');
+			$('#ancho').css('color','black');
+			$('#direccion').css('text-decoration','none');
+			$('#direccion').css('color','black');
+			estado=0;
+		});
+
+		$('#btn-cancel-change').click(function(){
+			$('#btns-mod').show()
+			$('#btn-img').addClass('hidden');
+			$('#btns-acep').addClass('hidden');
+			$('#descripcion').off('click');
+			$('#descripcion').css('text-decoration','none');
+			$('#descripcion').css('color','black');
+			$('#largo').off('click');
+			$('#largo').css('text-decoration','none');
+			$('#largo').css('color','black');
+			$('#ancho').off('click');
+			$('#ancho').css('text-decoration','none');
+			$('#ancho').css('color','black');
+			$('#direccion').css('text-decoration','none');
+			$('#direccion').css('color','black');
+			estado=0;
+		});
+
+		
 		$("#enable").click( function(){
 			//alert("entro");
 			$("#dialog_simple").dialog("open");
@@ -1373,27 +1548,9 @@ include("inc/nav.php");
 			}
 		    });	
 		
-		$('#descripcion').click(function(){
-		    //alert("oee");
-		    //event.stopPropagation();
-		    //$(this).removeClass("popup-with-form");
-		    return false;
-		    //alert("oee");
-		});
 		
-		/*$('#largo').click(function(event){
-		    //alert("oee");
-		    event.stopImmediatePropagation();
-		    $(this).removeClass("popup-with-form");
-		    
-		    //alert("oee");
-		});*/
-		 	
-		$("#btn").click(function(){
-			
 		
-		});
-		 
+
 		$("#smart-mod-eg1").click(function(e) {
 			$.SmartMessageBox({
 				title : "Eliminar!",
