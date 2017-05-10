@@ -425,7 +425,15 @@ include("inc/nav.php");
 			});
 	$(document).ready(function() {
 		var estado=0;
+		var larg=$('#largo').text();
+		var anch=$('#ancho').text();
+		var desc=$('#descripcion').text();
+		
+
 		var pagefunction = function() {
+
+		
+
 		function desactivar(){
 			$('#descripcion').off('click');
 			$('#largo').off('click');
@@ -435,6 +443,8 @@ include("inc/nav.php");
 			//$('').off('click');
 		}
 		desactivar();
+		
+
 		    /*jslint smarttabs:true */
 			var colorful_style = [{
 		
@@ -1442,7 +1452,7 @@ include("inc/nav.php");
 			$.magnificPopup.close();
 		});
 
-
+		
 
 		$("#btn-modificar").click(function(){
 				$('#btns-mod').hide();
@@ -1451,7 +1461,7 @@ include("inc/nav.php");
 				$('#btns-acep').removeClass('hidden');
 				$('#btn-img').removeClass('hidden');
 				$('#descripcion').on('click',function(){
-					var desc=$(this).text();
+					desc=$(this).text();
 		  			$("#desc_text").val(desc);
 					$.magnificPopup.open({
 					  items: {
@@ -1463,8 +1473,10 @@ include("inc/nav.php");
 				$('#descripcion').css('text-decoration','underline');
 				$('#descripcion').css('color','blue');
 				$('#largo').on('click',function(){
-					$("#espc_largo").val(parseFloat($(this).text()));
-		  			$("#espc_ancho").val(parseFloat($('#ancho').text()));
+					anch=$('#ancho').text();
+					larg=$(this).text();
+					$("#espc_largo").val(parseFloat(larg));
+		  			$("#espc_ancho").val(parseFloat(anch));
 					$.magnificPopup.open({
 					  items: {
 					    src: '#espec_form'
@@ -1475,8 +1487,10 @@ include("inc/nav.php");
 				$('#largo').css('text-decoration','underline');
 				$('#largo').css('color','blue');
 				$('#ancho').on('click',function(){
-					$("#espc_largo").val(parseFloat($('#largo').text()));
-		   			$("#espc_ancho").val(parseFloat($(this).text()));
+					anch=($(this).text());
+					larg=($('#largo').text())
+					$("#espc_largo").val(parseFloat(larg));
+		   			$("#espc_ancho").val(parseFloat(anch));
 					$.magnificPopup.open({
 					  items: {
 					    src: '#espec_form'
@@ -1511,6 +1525,9 @@ include("inc/nav.php");
 		});
 
 		$('#btn-cancel-change').click(function(){
+			$('#descripcion').text(desc);
+			$('#largo').text(larg);
+			$('#ancho').text(anch);
 			$('#btns-mod').show()
 			$('#btn-img').addClass('hidden');
 			$('#btns-acep').addClass('hidden');

@@ -53,7 +53,7 @@ include("inc/nav.php");
 									<table class="table table-hover">
 										<thead>
 											<tr>
-												<th class="col-lg-2 col-md-2 col-sm-5 col-xs-5">ESPACIO</th>
+												<th class="col-lg-3 col-md-3 col-sm-2 col-xs-2">ESPACIO</th>
 												<th>DIRECCION</th>
 												<th>FECHA</th>
 												<th class="hidden-xs">INSTALADOR</th>
@@ -65,7 +65,7 @@ include("inc/nav.php");
 											<tr>
 												
 												<td>
-													<div class="col-lg-2 col-md-2 col-sm-5 col-xs-12">
+													<div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
 														<div class="product-image"> 
 															<img src="img/demo/e-comm/8.png" alt="194x228" class="img-responsive"> 
 		
@@ -84,7 +84,7 @@ include("inc/nav.php");
 											<tr>
 												
 												<td>
-													<div class="col-lg-2 col-md-2 col-sm-5 col-xs-12">
+													<div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
 														<div class="product-image"> 
 															<img src="img/demo/e-comm/8.png" alt="194x228" class="img-responsive"> 
 		
@@ -104,7 +104,7 @@ include("inc/nav.php");
 											<tr>
 												
 												<td>
-													<div href="products-detail.php" class="col-lg-2 col-md-2 col-sm-5 col-xs-12">
+													<div href="products-detail.php" class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
 														<div class="product-image"> 
 															<img src="img/demo/e-comm/8.png" alt="194x228" class="img-responsive"> 
 		
