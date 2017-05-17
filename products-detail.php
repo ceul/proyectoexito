@@ -92,7 +92,7 @@ include("inc/nav.php");
 								</h2>
 								<hr>
 								<div class="row">
-									<div>
+									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 										<h5>
 											Dirección:  <span id='direccion'>Carrera 14 # 14-62</span>
 										</h5>
@@ -111,10 +111,13 @@ include("inc/nav.php");
 										<h5>
 											Ubicación : Santa Rosa de Cabal
 										</h5>
-									</div>	
-									<!--<div id="map_canvas" class="google_maps col-xs-6 col-sm-5 col-md-5 col-lg-5" gmap-data-lat="29.895883" data-gmap-lng="-75.69966990350343" data-gmap-zoom="5">
-										&nbsp;
-									</div>-->
+									</div>
+									
+									<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+										<div id="map_canvas" class="google_maps" gmap-data-lat="29.895883" data-gmap-lng="-75.69966990350343" data-gmap-zoom="5">
+											&nbsp;
+										</div>
+									</div>
 								</div>					
 								
 	
@@ -428,7 +431,7 @@ include("inc/nav.php");
 		var larg=$('#largo').text();
 		var anch=$('#ancho').text();
 		var desc=$('#descripcion').text();
-		
+		var marker;
 
 		var pagefunction = function() {
 
@@ -1302,12 +1305,14 @@ include("inc/nav.php");
 		        map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 			//var myLatlng = new google.maps.LatLng(4.8141558222999565,-75.69966990350343);
 			var myLatlng = new google.maps.LatLng($data_lat,$data_lng);
-			var marker = new google.maps.Marker({
+			//aca se crea el marcador arrastrable poniendo la opcion draggable true
+			marker = new google.maps.Marker({
 			    position: myLatlng,
 			    map: map,
-			    draggable:true,
+			    draggable:false,
 			    title:"Drag me!"
 			});
+			//se añade el listener del evento "se termino de arrastrar"
 			google.maps.event.addListener(marker, 'dragend', function(){
         			setLatLng(marker);
    			 });
@@ -1317,7 +1322,7 @@ include("inc/nav.php");
 						
 		    } // end demoLoadAttribute
 
-
+			//esta funcion convierte la ubicaciondel marcador a una direccion
 		    function setLatLng(marker){
 		    	var markerLatLng = marker.getPosition();
 		    	document.getElementById("lat").value=markerLatLng.lat();
@@ -1455,6 +1460,7 @@ include("inc/nav.php");
 		
 
 		$("#btn-modificar").click(function(){
+				marker.setDraggable(true);
 				$('#btns-mod').hide();
 				$('#btns-acep').show();
 				$('#btn-img').show();
@@ -1507,6 +1513,7 @@ include("inc/nav.php");
 		});
 
 		$('#btn-acep-change').click(function(){
+			marker.setDraggable(false);
 			$('#btns-mod').show()
 			$('#btn-img').addClass('hidden');
 			$('#btns-acep').addClass('hidden');
@@ -1525,6 +1532,7 @@ include("inc/nav.php");
 		});
 
 		$('#btn-cancel-change').click(function(){
+			marker.setDraggable(false);
 			$('#descripcion').text(desc);
 			$('#largo').text(larg);
 			$('#ancho').text(anch);

@@ -105,16 +105,13 @@ include("inc/nav.php");
 				<i class="glyphicon glyphicon-plus" ></i>
 			</button>		
 		</div>
-		<div class="col-sm-6 col-md-6 col-lg-4">
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 					<!-- product -->
-					<div class="product-content product-wrap clearfix">
+					<div class="product-content clearfix">
 						<div class="row">
 								<div class="col-md-5 col-sm-12 col-xs-12">
 									<div class="product-image"> 
 										<img src="img/demo/e-comm/3.png" alt="194x228" class="img-responsive"> 
-										<span class="tag2 hot">
-											HOT
-										</span> 
 									</div>
 								</div>
 								<div class="col-md-7 col-sm-12 col-xs-12">
@@ -138,16 +135,13 @@ include("inc/nav.php");
 					<!-- end product -->
 				</div>			
 
-				<div class="col-sm-6 col-md-6 col-lg-4">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 					<!-- product -->
-					<div class="product-content product-wrap clearfix">
+					<div class="product-content clearfix">
 						<div class="row">
 								<div class="col-md-5 col-sm-12 col-xs-12">
 									<div class="product-image"> 
 										<img src="img/demo/e-comm/4.png" alt="194x228" class="img-responsive"> 
-										<span class="tag2 sale">
-											Sale
-										</span> 
 									</div>
 								</div>
 								<div class="col-md-7 col-sm-12 col-xs-12">
@@ -171,16 +165,13 @@ include("inc/nav.php");
 					<!-- end product -->
 				</div>	
 
-				<div class="col-sm-6 col-md-6 col-lg-4">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 					<!-- product -->
-					<div class="product-content product-wrap clearfix">
+					<div class="product-content clearfix">
 						<div class="row">
 								<div class="col-md-5 col-sm-12 col-xs-12">
 									<div class="product-image"> 
 										<img src="img/demo/e-comm/5.png" alt="194x228" class="img-responsive"> 
-										<span class="tag2 sale">
-											Sale
-										</span> 
 									</div>
 								</div>
 								<div class="col-md-7 col-sm-12 col-xs-12">
@@ -204,16 +195,13 @@ include("inc/nav.php");
 					<!-- end product -->
 				</div>	
 
-				<div class="col-sm-6 col-md-6 col-lg-4">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 					<!-- product -->
-					<div class="product-content product-wrap clearfix">
+					<div class="product-content clearfix">
 						<div class="row">
 								<div class="col-md-5 col-sm-12 col-xs-12">
 									<div class="product-image"> 
 										<img src="img/demo/e-comm/7.png" alt="194x228" class="img-responsive"> 
-										<span class="tag2 sale">
-											Sale
-										</span> 
 									</div>
 								</div>
 								<div class="col-md-7 col-sm-12 col-xs-12">
@@ -237,16 +225,13 @@ include("inc/nav.php");
 					<!-- end product -->
 				</div>	
 
-				<div class="col-sm-6 col-md-6 col-lg-4">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 					<!-- product -->
-					<div class="product-content product-wrap clearfix">
+					<div class="product-content clearfix">
 						<div class="row">
 								<div class="col-md-5 col-sm-12 col-xs-12">
 									<div class="product-image"> 
 										<img src="img/demo/e-comm/8.png" alt="194x228" class="img-responsive"> 
-										<span class="tag2 sale">
-											Sale
-										</span> 
 									</div>
 								</div>
 								<div class="col-md-7 col-sm-12 col-xs-12">
@@ -270,16 +255,13 @@ include("inc/nav.php");
 					<!-- end product -->
 				</div>	
 
-				<div class="col-sm-6 col-md-6 col-lg-4">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 					<!-- product -->
-					<div class="product-content product-wrap clearfix">
+					<div class="product-content clearfix">
 						<div class="row">
 								<div class="col-md-5 col-sm-12 col-xs-12">
 									<div class="product-image"> 
-										<img src="img/demo/e-comm/9.png" alt="194x228" class="img-responsive"> 
-										<span class="tag2 sale">
-											Sale
-										</span> 
+										<img src="img/demo/e-comm/9.png" alt="194x228" class="img-responsive">  
 									</div>
 								</div>
 								<div class="col-md-7 col-sm-12 col-xs-12">
@@ -301,7 +283,6 @@ include("inc/nav.php");
 						</div>
 					</div>
 					<!-- end product -->
-				<div class="row">
 				</div>
 		<br>
 		
